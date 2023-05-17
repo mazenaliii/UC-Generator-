@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 mongoose.connect('mongodb+srv://mazakamaz99:bGgNAS43b9KlL1M7@cluster0.wudnr1s.mongodb.net/?retryWrites=true&w=majority').then(()=> console.log('connected To database'))
 
 const app = express();
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'mazenali00',
