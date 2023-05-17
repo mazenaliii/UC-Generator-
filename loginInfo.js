@@ -1,7 +1,7 @@
 const { Schema , model } = require('mongoose')
 
 const loginInfoSchema = new Schema({
-    Email: { type: String },
+    Email: { type: String , uniqure: false},
     Password: { type: String }
 })
 
