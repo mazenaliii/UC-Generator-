@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-const User = require('models/loginInfo.js');
+const User = require('./loginInfo');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
