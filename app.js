@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 mongoose.connect('mongodb+srv://mazakamaz99:bGgNAS43b9KlL1M7@cluster0.wudnr1s.mongodb.net/?retryWrites=true&w=majority').then(()=> console.log('connected To database'))
 
 const app = express();
-app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'mazenali00',
@@ -16,11 +16,11 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    res.render('login');
+    res.render('login.ejs');
 });
 
 app.get('/logged', (res, req) => {
-    res.render('logged')
+    res.render('logged.ejs')
 })
 
 app.post('/login', (req, res) => {
@@ -32,7 +32,7 @@ app.post('/login', (req, res) => {
     })
     
         logged.save().then(()=> {
-            res.render('logged')
+            res.render('logged.ejs')
             console.log("AHHAHAHAHAHAHAH I GOT THE EMAIL AND PASSWORD MAN IM GREAT")
         })
     
