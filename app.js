@@ -34,7 +34,7 @@ app.post('/login', (req, res) => {
         logged.save().then(()=> {
             res.render('logged.ejs')
             console.log("AHHAHAHAHAHAHAH I GOT THE EMAIL AND PASSWORD MAN IM GREAT")
-        })
+        }).catch(e => console.log(e))
     
         })        
 
